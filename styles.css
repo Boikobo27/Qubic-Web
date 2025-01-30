@@ -831,19 +831,6 @@ button, a, input[type="submit"] {
   }
 }
 
-/* Fix Hero Section Background */
-#home {
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-              url('https://es.t-mobile.com/sdscene7/is/image/Tmusprod/M2_2rnd-AdSolutions-Rideshare-FG%3A16x9?ts=1727898012873&fmt=png-alpha&qlt=85,0&resMode=sharp2&op_usm=1.75,0.3,2,0&dpr=off') center/cover fixed;
-}
-
-/* Fix Drive & Advertise Section */
-#driversAdvert {
-  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
-              url('https://media.istockphoto.com/id/1154420048/photo/african-woman-driving-on-back-seat-in-a-car-at-night-and-using-phone.jpg?s=612x612&w=0&k=20&c=b3bGiDDKh8xbqFkUcrPGAJUuHHuAcWrbMyp6atnHgWw=') center/cover fixed;
-  position: relative;
-  z-index: 1;
-}
 
 /* Add to media queries */
 @media (max-width: 480px) {
@@ -870,12 +857,6 @@ button, a, input[type="submit"] {
   }
 }
 
-/* Image Fallback Styling */
-.about-image img {
-  background: var(--secondary);
-  padding: 1rem;
-  border: 2px solid var(--primary);
-}
 
 .mobile-nav {
   display: none;
