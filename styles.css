@@ -662,3 +662,141 @@ footer {
     font-size: 2.2rem;
   }
 }
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/* Improved Mobile Responsiveness */
+@media (max-width: 480px) {
+  /* Typography */
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.6rem; }
+  h3 { font-size: 1.3rem; }
+  
+  /* Hero Section */
+  #home {
+    padding: 20px 15px;
+    min-height: 90vh;
+  }
+  
+  #home p {
+    font-size: 1rem;
+    margin: 1rem 0;
+  }
+
+  /* Service Cards */
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .service-card {
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+
+  /* Forms */
+  #contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  #contact form > * {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  input, select, textarea {
+    font-size: 16px !important;
+    padding: 12px !important;
+  }
+
+  /* Mobile Menu */
+  .mobile-nav {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: var(--nav-bg);
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+  }
+
+  .mobile-nav.open {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  /* Points Grid */
+  .points-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* Buttons */
+  .btn {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+}
+
+/* Tablet Views */
+@media (min-width: 481px) and (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .points-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Add to existing CSS */
+.hamburger {
+  padding: 15px;
+  z-index: 1001;
+}
+
+.mobile-nav a {
+  padding: 15px 20px;
+  font-size: 1.1rem;
+}
+
+/* Prevent horizontal scroll */
+html, body {
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Better touch targets */
+button, a, input[type="submit"] {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.hamburger.active {
+  color: var(--primary);
+  transform: rotate(90deg);
+  transition: all 0.3s ease;
+}
+
+.mobile-nav a {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  transition: all 0.2s ease;
+}
+
+.mobile-nav a:active {
+  background: var(--primary);
+}
+
+.service-card, .point {
+  padding: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.service-card img {
+  max-height: 120px;
+}
+
+#aboutUs .about-text {
+  padding: 0 1rem;
+}
