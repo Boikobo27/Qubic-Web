@@ -842,8 +842,11 @@ button, a, input[type="submit"] {
   }
   
   /* Hero Section */
-  #home, #driversAdvert {
-    background-attachment: scroll;
+  #home {
+    background-attachment: fixed;
+  }
+  #driversAdvert{
+     background-attachment: fixed;
   }
   
   /* Content Sections */
