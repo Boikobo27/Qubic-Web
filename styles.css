@@ -1,0 +1,664 @@
+
+/* =================================
+   COLOR & GLOBAL VARIABLES
+=================================== */
+:root {
+  /* Use #cb0094 for main color */
+  --primary: #cb0094;
+  --secondary: #c30070;
+  --text-main: #ffffff;
+  --nav-bg: #141414;
+  --max-width: 1400px;
+
+  /* Border-radius variables for "curvey corners" */
+  --border-radius: 15px;
+  --border-radius-big: 25px;
+}
+
+/* RESET & GLOBALS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Remove underline on hover for all links */
+a {
+  text-decoration: none;
+  transition: color 0.3s;
+  color: var(--text-main);
+}
+a:hover {
+  text-decoration: none !important;
+}
+
+h1, h2, h3 {
+  margin-bottom: 0.6em;
+  color: var(--text-main);
+}
+h1 { font-size: 2rem; }
+h2 { font-size: 2.2rem; }
+h3 { font-size: 1.6rem; }
+
+p {
+  margin-bottom: 1em;
+  color: var(--text-main);
+  font-size: 1.1rem;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5em;
+  text-align: center;
+}
+
+/* =================================
+   HEADER / NAV
+=================================== */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: var(--nav-bg);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  position: relative;
+}
+/* Logo as link to home */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 1.5em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: var(--text-main);
+}
+.logo img {
+  height: 70px; /* Adjust to align with text within 60px nav */
+  width: auto;
+  vertical-align: middle;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1em;
+}
+.nav-links li a {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  padding: 0.4em 0.6em;
+  border-radius: var(--border-radius);
+  transition: background 0.3s;
+}
+.nav-links li a:hover {
+  background: var(--primary);
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 1.5em;
+  background: none;
+  border: none;
+  color: #fff;
+}
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background: var(--nav-bg);
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 200px;
+  padding: 1em;
+  gap: 1em;
+}
+.mobile-nav a {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  border-radius: var(--border-radius);
+  padding: 0.4em 0.6em;
+  text-align: left;
+  color: var(--text-main);
+}
+.mobile-nav a:hover {
+  background: var(--primary);
+}
+.mobile-nav.open {
+  display: flex;
+}
+
+/* =================================
+   HERO (HOME)
+   lighten overlay to 0.6
+=================================== */
+#home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  position: relative;
+  background: url('https://es.t-mobile.com/sdscene7/is/image/Tmusprod/M2_2rnd-AdSolutions-Rideshare-FG%3A16x9?ts=1727898012873&fmt=png-alpha&qlt=85,0&resMode=sharp2&op_usm=1.75,0.3,2,0&dpr=off')
+              no-repeat center/cover;
+  background-color: rgba(0,0,0,0.6);
+  background-attachment: fixed;
+  background-blend-mode: overlay;
+  text-align: center;
+  padding: 0 1em;
+}
+
+/* Typed hero heading */
+#typedHeading {
+  font-size: 4rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+#cursor {
+  display: inline-block;
+  width: 2px;
+  background: var(--primary);
+  margin-left: 4px;
+  animation: blink 0.8s infinite;
+}
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+#home p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 1em auto 1.5em;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+.btn-group {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+}
+.btn {
+  padding: 0.7em 1.2em;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius-big);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+  font-size: 1.1rem;
+}
+.btn:hover {
+  background: #b80086; /* a shade darker from #cb0094 */
+  transform: translateY(-2px);
+}
+
+/* White circle arrow w/ #cb0094 glow */
+.arrow-down {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 30px;
+  width: 50px;
+  height: 50px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: bounce 2s infinite;
+  cursor: pointer;
+  color: var(--primary);
+  box-shadow: 0 0 10px var(--primary);
+}
+.arrow-down i {
+  font-size: 1.2rem;
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
+  40% { transform: translate(-50%, -10px); }
+  60% { transform: translate(-50%, -5px); }
+}
+
+/* =================================
+   ABOUT US
+   text left, image right
+   center on small screens
+=================================== */
+#aboutUs {
+  background: #1f1f1f;
+  background-blend-mode: multiply;
+  padding-top: 80px;
+  padding-bottom: 60px;
+}
+.about-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  gap: 2em;
+  flex-wrap: wrap;
+  padding: 0 1em;
+}
+.about-text {
+  flex: 1;
+  text-align: left;
+}
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.about-image img {
+  max-width: 500px;
+  height: auto;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* =================================
+   WHAT TO EXPECT
+=================================== */
+#services {
+  background: #1f1f1f;
+  background-blend-mode: multiply;
+  padding-top: 80px;
+  padding-bottom: 60px;
+  text-align: center;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2em;
+  margin: 2em auto 0 auto;
+  text-align: left;
+  max-width: var(--max-width);
+  padding: 0 1em;
+}
+.service-card {
+  background: rgba(255,255,255,0.1);
+  padding: 1.2em;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.service-card:hover {
+  transform: translateY(-4px);
+}
+.poster-card {
+  box-shadow: 0 0 15px #cb0094;
+  border-radius: var(--border-radius-big);
+}
+.service-card img {
+  max-width: 100%;
+  height: auto;
+  max-height: 150px;
+  object-fit: cover;
+  margin-bottom: 0.8em;
+  border-radius: var(--border-radius-big);
+}
+.service-card h3 {
+  margin-bottom: 0.4em;
+  font-size: 1.2rem;
+}
+.service-card p {
+  font-size: 0.95rem;
+}
+
+/* =================================
+   DRIVE + ADVERTISE
+=================================== */
+#driversAdvert {
+  background: url('https://media.istockphoto.com/id/1154420048/photo/african-woman-driving-on-back-seat-in-a-car-at-night-and-using-phone.jpg?s=612x612&w=0&k=20&c=b3bGiDDKh8xbqFkUcrPGAJUuHHuAcWrbMyp6atnHgWw=')
+              no-repeat center/cover;
+  background-attachment: fixed;
+  background-blend-mode: overlay;
+  background-color: rgba(0,0,0,0.8);
+  padding-top: 80px;
+  padding-bottom: 60px;
+}
+.drivers, .advertisers {
+  max-width: var(--max-width);
+  margin: 0 auto 80px;
+  padding: 0 1em;
+}
+.drivers h2, .advertisers h2 {
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 2.2rem;
+}
+.points-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5em;
+  margin-top: 2em;
+}
+.point {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: rgba(255,255,255,0.1);
+  padding: 1em;
+  border-radius: var(--border-radius-big);
+  transition: transform 0.3s;
+}
+.point:hover {
+  transform: translateY(-3px);
+}
+.point i {
+  font-size: 2.2rem;
+  margin-bottom: 0.5em;
+}
+.point strong {
+  margin-bottom: 0.3em;
+  display: block;
+  font-size: 1.15rem;
+}
+.point p {
+  font-size: 1.05rem;
+}
+.cta-center {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+}
+.cta-center .btn {
+  border-radius: var(--border-radius-big);
+}
+
+/* =================================
+   CONTACT
+=================================== */
+#contact {
+  background: #1f1f1f;
+  padding-top: 80px;
+  padding-bottom: 60px;
+  text-align: center;
+}
+#contact h2 {
+  margin-bottom: 1em;
+  font-size: 2.2rem;
+}
+#contact form {
+  display: grid;
+  grid-gap: 1.2em;
+  margin-top: 1.5em;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 0 1em;
+}
+#contact label {
+  font-size: 1.1rem;
+}
+#contact select,
+#contact input,
+#contact textarea {
+  width: 100%;
+  padding: 0.75em;
+  border: 1px solid #666;
+  border-radius: var(--border-radius-big);
+  background: #fff;
+  color: #000;
+  font: inherit;
+  font-size: 1rem;
+  outline: none;
+  transition: box-shadow 0.3s;
+}
+#contact select:focus,
+#contact input:focus,
+#contact textarea:focus {
+  box-shadow: 0 0 10px #cb0094;
+}
+#contact button[type="submit"] {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius-big);
+  padding: 0.5em 1em;
+  cursor: pointer;
+  font-weight: 600;
+  width: fit-content;
+  transition: background 0.3s, transform 0.3s;
+  font-size: 1.1rem;
+}
+#contact button[type="submit"]:hover {
+  background: #b80086;
+  cursor: pointer;
+  transform: translateY(-2px);
+}
+
+/* =================================
+   MODAL OVERLAY & FORM
+=================================== */
+.overlay {
+  position: fixed;
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal {
+  background: #2a2a2a;
+  color: #fff;
+  max-width: 500px;
+  width: 90%;
+  max-height: 80%;
+  overflow-y: auto;
+  border-radius: var(--border-radius-big);
+  padding: 1.5rem;
+  position: relative;
+}
+.modal h2 {
+  margin-bottom: 1em;
+}
+.modal label {
+  display: block;
+  margin-bottom: 0.3em;
+  font-weight: 600;
+}
+.modal input,
+.modal textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1em;
+  border: 1px solid #666;
+  border-radius: var(--border-radius-big);
+  background: #fff;
+  color: #000;
+  outline: none;
+  font-size: 1rem;
+}
+.modal input:focus,
+.modal textarea:focus {
+  box-shadow: 0 0 10px var(--primary);
+}
+.modal .close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  color: #fff;
+  cursor: pointer;
+}
+.modal .form-btn {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius-big);
+  padding: 0.7em 1.2em;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.3s;
+  font-size: 1rem;
+}
+.modal .form-btn:hover {
+  background: #b80086;
+  transform: translateY(-2px);
+}
+.success-message {
+  text-align: center;
+}
+.success-message h2 {
+  margin-bottom: 0.8em;
+}
+
+/* =================================
+   SCROLL TO TOP BUTTON
+=================================== */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  box-shadow: 0 0 10px var(--primary);
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  z-index: 9999;
+}
+.scroll-top-btn.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+.scroll-top-btn i {
+  font-size: 1.2rem;
+}
+
+/* =================================
+   FOOTER
+=================================== */
+footer {
+  background: var(--nav-bg);
+  text-align: center;
+  padding: 1em;
+}
+.footer-links {
+  margin-bottom: 0.5em;
+}
+.footer-links a {
+  color: var(--text-main);
+  margin: 0 0.5em;
+}
+.footer-links a:hover {
+  text-decoration: none !important;
+}
+.social-icons {
+  margin: 0.5em 0;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+.social-icons a {
+  color: var(--text-main);
+  font-size: 1.2em;
+  transition: color 0.3s;
+}
+.social-icons a:hover {
+  color: #ccc;
+}
+.footer-terms {
+  margin-top: 0.5em;
+  font-size: 0.85em;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.footer-copy {
+  font-size: 0.9em;
+  color: var(--text-main);
+  margin-top: 0.5em;
+}
+
+/* =================================
+   MEDIA QUERIES
+=================================== */
+@media (max-width: 992px) {
+  #typedHeading {
+    font-size: 2.8rem;
+  }
+}
+@media (max-width: 768px) {
+  nav .nav-links {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 1em; 
+  }
+  .about-text {
+    order: 1;
+    text-align: center;
+  }
+  .about-image {
+    order: 2;
+    margin-bottom: 1em;
+  }
+  .points-grid {
+    grid-template-columns: 1fr;
+  }
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding: 0 1em; 
+  }
+  #typedHeading {
+    font-size: 2.2rem;
+  }
+}

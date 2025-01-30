@@ -1,0 +1,283 @@
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qubic3D - In-Vehicle Advertising</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- HEADER / NAV -->
+  <header>
+    <div class="container">
+      <nav>
+        <!-- Make the entire logo area a link to #home -->
+        <a href="#home" class="logo">
+          <img src="images/logo2.png" alt="Qubic3D Icon" />
+          Qubic3D
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#aboutUs">About</a></li>
+          <li><a href="#services">What to Expect</a></li>
+          <li><a href="#driversAdvert">Drive & Advertise</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger">&#9776;</button>
+        <div class="mobile-nav" id="mobileNav">
+          <a href="#home">Home</a>
+          <a href="#aboutUs">About</a>
+          <a href="#services">What to Expect</a>
+          <a href="#driversAdvert">Drive & Advertise</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO (HOME) -->
+  <section id="home">
+    <h1>
+      <span id="typedHeading"></span><span id="cursor"></span>
+    </h1>
+    <p>
+      Join the future of on-the-go marketing - starting with static posters<br/>
+      and evolving into interactive tablet displays!
+    </p>
+    <div class="btn-group">
+      <!-- Open advertiser modal on click -->
+      <button class="btn" id="openAdvertiserBtn">Advertise with us</button>
+      <!-- Open driver modal on click -->
+      <button class="btn" id="openDriverBtn">Driver sign-up</button>
+    </div>
+    <!-- circle arrow with #cb0094 glow -->
+    <div class="arrow-down">
+      <i class="fa fa-arrow-down" onclick="document.querySelector('#aboutUs').scrollIntoView({behavior:'smooth'})"></i>
+    </div>
+  </section>
+
+  <!-- ABOUT US -->
+  <section id="aboutUs">
+    <div class="about-section">
+      <div class="about-text">
+        <h2>About Us</h2>
+        <p>We're on a mission to revolutionize on-the-go advertising by seamlessly blending brand exposure with everyday rides. Our team brings expertise in advertising, technology, and rideshare to create new opportunities for businesses and drivers alike.</p>
+        <p>With our commitment to innovation, quality, and mutually beneficial partnerships, we're shaping the future of marketing - one ride at a time.</p>
+      </div>
+      <div class="about-image">
+        <img
+          src="https://www.motortrend.com/uploads/2022/03/IVEE_Rideshare_Infotainment_7.jpg"
+          alt="Qubic3D Team"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT TO EXPECT -->
+  <section id="services">
+    <div class="container">
+      <h2>What to Expect</h2>
+      <p>Qubic3D provides engaging, interactive in-vehicle ad solutions tailored to your needs.</p>
+      <div class="services-grid">
+        <!-- Poster => constant glow #cb0094 -->
+        <div class="service-card poster-card">
+          <img
+            src="https://m.media-amazon.com/images/I/91VwPdVGCnL._AC_SL1500_.jpg"
+            alt="Poster/Static Ads"
+          />
+          <h3>Poster/Static Ads</h3>
+          <p>Our initial rollout includes high-quality static posters. Engage riders with vivid visuals as we build toward a fully interactive tablet system.</p>
+        </div>
+        <div class="service-card">
+          <img
+            src="https://cdn-ilcjllf.nitrocdn.com/AskMrCOXHiTcwHKwyXkhtjGCDtMGrlJi/assets/images/optimized/rev-4913540/playoctopus.com/wp-content/uploads/2024/09/play-octopus-advertise-with-us-001.webp"
+            alt="Games & Quizzes"
+          />
+          <h3>Games & Quizzes</h3>
+          <p>Engage passengers with fun, branded quizzes or games. Perfect for real-time passenger interaction and memory recall.</p>
+        </div>
+        <div class="service-card">
+          <img
+            src="https://cdn-ilcjllf.nitrocdn.com/AskMrCOXHiTcwHKwyXkhtjGCDtMGrlJi/assets/images/optimized/rev-4913540/playoctopus.com/wp-content/uploads/2024/09/play-octopus-ride-information.webp"
+            alt="Driver Information"
+          />
+          <h3>Driver Information</h3>
+          <p>Keep drivers informed with real-time updates, safety tips, and passenger feedback integration - all in one tablet hub.</p>
+        </div>
+        <div class="service-card">
+          <img
+            src="https://cdn-ilcjllf.nitrocdn.com/AskMrCOXHiTcwHKwyXkhtjGCDtMGrlJi/assets/images/optimized/rev-4913540/playoctopus.com/wp-content/uploads/2024/09/play-octopus-interactive-ads.webp"
+            alt="Interactive Ads"
+          />
+          <h3>Interactive Ads</h3>
+          <p>Boost engagement with video- and touch-enabled ad experiences. Increase brand recall through dynamic content.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DRIVE + ADVERTISE -->
+  <section id="driversAdvert">
+    <div class="drivers">
+      <h2>Drive with Us & Earn More</h2>
+      <div class="points-grid">
+        <div class="point">
+          <i class="fa fa-money-bill-wave"></i>
+          <strong>Make More Money</strong>
+          <p>Earn monthly payouts simply by allowing Qubic3D ads in your vehicle.</p>
+        </div>
+        <div class="point">
+          <i class="fa fa-tv"></i>
+          <strong>Entertainment</strong>
+          <p>Engaging content for passengers can boost ratings and reduce ride boredom.</p>
+        </div>
+        <div class="point">
+          <i class="fa fa-comments"></i>
+          <strong>Customer Feedback</strong>
+          <p>Gather feedback directly from riders to improve service quality.</p>
+        </div>
+        <div class="point">
+          <i class="fa fa-thumbs-up"></i>
+          <strong>Increased Tips</strong>
+          <p>Entertained or informed passengers are often more generous with gratuities.</p>
+        </div>
+        <div class="point">
+          <i class="fa fa-route"></i>
+          <strong>Trip Information</strong>
+          <p>Offer route details or updates so riders stay informed about their journey.</p>
+        </div>
+        <div class="point">
+          <i class="fa fa-user-shield"></i>
+          <strong>Driver Information</strong>
+          <p>Keep all essential driver resources in one easy-to-access location.</p>
+        </div>
+      </div>
+      <div class="cta-center" style="margin-top: 2em;">
+        <!-- Another button to open driver form -->
+        <button class="btn" id="openDriverBtn2">Sign up to drive with us</button>
+      </div>
+    </div>
+
+    <div class="advertisers">
+      <h2>Why Advertise in Rideshare Vehicles?</h2>
+      <div class="points-grid">
+        <div class="point">
+          <i class="fa fa-check-circle"></i>
+          <strong>Guaranteed Impressions</strong>
+          <p>Every ride ensures your ads are seen by a captive audience.</p>
+        </div>
+        <div class="point">
+          <i class="fa fa-bullseye"></i>
+          <strong>Targeted Audience</strong>
+          <p>Focus on specific regions or demographics for maximum impact.</p>
+        </div>
+        <div class="point">
+          <i class="fa fa-sliders-h"></i>
+          <strong>Customizable Campaigns</strong>
+          <p>Tailor messages, layouts, or offers to match your brand strategy.</p>
+        </div>
+        <div class="point">
+          <i class="fa fa-qrcode"></i>
+          <strong>QR Code Ready</strong>
+          <p>Encourage immediate engagement by scanning codes directly from the seat.</p>
+        </div>
+        <div class="point">
+          <i class="fa fa-chart-line"></i>
+          <strong>Full Analytics</strong>
+          <p>Track ad performance in real-time for better ROI insights.</p>
+        </div>
+        <div class="point">
+          <i class="fa fa-map-marker-alt"></i>
+          <strong>Geo Location</strong>
+          <p>Target riders by city, district, or even route-based advertising zones.</p>
+        </div>
+      </div>
+      <div class="cta-center" style="margin-top: 2em;">
+        <!-- Another button to open advertiser form -->
+        <button class="btn" id="openAdvertiserBtn2">Contact us for more info</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Ready to drive your brand or earn extra income? Fill out the form below or reach us directly.</p>
+    <form
+      action="https://formspree.io/f/xbldyrrn"
+      method="POST"
+    >
+      <!-- Example hidden input to set the email subject -->
+      <input type="hidden" name="_subject" value="https://qubic3d.co.za/thankyou.html" />
+
+      <label for="userType">I am an:</label>
+      <select id="userType" name="userType" required>
+        <option value="">Select one</option>
+        <option value="advertiser">Advertiser</option>
+        <option value="driver">Uber Driver</option>
+      </select>
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="_replyto" required />
+
+      <label for="Phone">Phone Number</label>
+      <input type="tel" id="Phone" name="phone" required>
+
+      <label for="message">Message or Campaign Goals:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <!-- Formspree anti-bot field -->
+      <input type="text" name="_gotcha" style="display:none" />
+
+      <!-- Submit button -->
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="#home">Home</a> |
+        <a href="#aboutUs">About</a> |
+        <a href="#services">What to Expect</a> |
+        <a href="#driversAdvert">Drive & Advertise</a> |
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="footer-terms">T&amp;Cs / Agreement</div>
+      <div class="footer-copy">
+        &copy; <span id="year"></span> Qubic3D. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- OVERLAY + MODAL (Hidden by default) -->
+  <div class="overlay" id="overlay">
+    <div class="modal" id="modalForm">
+      <button class="close-btn" id="closeModal">&times;</button>
+      <!-- The form content or success message gets injected here -->
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- SCROLL-TO-TOP BUTTON -->
+  <div class="scroll-top-btn" id="scrollTopBtn">
+    <i class="fa fa-arrow-up"></i>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
