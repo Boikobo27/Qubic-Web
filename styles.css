@@ -842,7 +842,7 @@ button, a, input[type="submit"] {
   }
   
   /* Hero Section */
-  #home {
+  #home, #driversAdvert {
     background-attachment: scroll;
   }
   
