@@ -843,10 +843,10 @@ button, a, input[type="submit"] {
   
   /* Hero Section */
   #home {
-    background-attachment: fixed;
+    background-attachment: scroll;
   }
   #driversAdvert{
-     background-attachment: fixed;
+     background-attachment: scroll;
   }
   
   /* Content Sections */
