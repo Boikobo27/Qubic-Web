@@ -178,3 +178,21 @@ document.addEventListener('DOMContentLoaded', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 });
+
+// Update mobile menu handling in script.js
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+
+hamburger.addEventListener('click', (e) => {
+  e.stopPropagation();
+  mobileNav.classList.toggle('open');
+  hamburger.classList.toggle('active');
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (!mobileNav.contains(e.target) && !hamburger.contains(e.target)) {
+    mobileNav.classList.remove('open');
+    hamburger.classList.remove('active');
+  }
+});
