@@ -800,3 +800,105 @@ button, a, input[type="submit"] {
 #aboutUs .about-text {
   padding: 0 1rem;
 }
+
+/* Update About Section */
+#aboutUs {
+  padding: 60px 0;
+}
+
+.about-section {
+  flex-direction: column-reverse; /* Reverse order on mobile */
+  gap: 2rem;
+}
+
+.about-image {
+  order: -1; /* Image first on mobile */
+}
+
+.about-image img {
+  max-width: 100%;
+  width: min(600px, 100%);
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .about-section {
+    flex-direction: row;
+    gap: 4rem;
+  }
+  .about-image {
+    order: 0; /* Reset order on desktop */
+  }
+}
+
+/* Fix Hero Section Background */
+#home {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url('https://es.t-mobile.com/sdscene7/is/image/Tmusprod/M2_2rnd-AdSolutions-Rideshare-FG%3A16x9?ts=1727898012873&fmt=png-alpha&qlt=85,0&resMode=sharp2&op_usm=1.75,0.3,2,0&dpr=off') center/cover fixed;
+}
+
+/* Fix Drive & Advertise Section */
+#driversAdvert {
+  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+              url('https://media.istockphoto.com/id/1154420048/photo/african-woman-driving-on-back-seat-in-a-car-at-night-and-using-phone.jpg?s=612x612&w=0&k=20&c=b3bGiDDKh8xbqFkUcrPGAJUuHHuAcWrbMyp6atnHgWw=') center/cover fixed;
+  position: relative;
+  z-index: 1;
+}
+
+/* Add to media queries */
+@media (max-width: 480px) {
+  /* Typography */
+  #aboutUs p {
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 0 1rem;
+  }
+  
+  /* Hero Section */
+  #home {
+    background-attachment: scroll;
+  }
+  
+  /* Content Sections */
+  .about-text, .drivers, .advertisers {
+    padding: 0 1rem;
+  }
+  
+  /* Prevent body scroll when menu open */
+  body.no-scroll {
+    overflow: hidden;
+  }
+}
+
+/* Image Fallback Styling */
+.about-image img {
+  background: var(--secondary);
+  padding: 1rem;
+  border: 2px solid var(--primary);
+}
+
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  background: var(--nav-bg);
+  padding: 1rem;
+  z-index: 999;
+  max-height: calc(100vh - 60px);
+  overflow-y: auto;
+}
+
+.mobile-nav.open {
+  display: flex;
+  flex-direction: column;
+}
+
+.hamburger {
+  transition: transform 0.3s ease;
+}
+
+.hamburger.active {
+  transform: rotate(90deg);
+}
